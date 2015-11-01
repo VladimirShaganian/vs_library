@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Material Design Navigation Bar</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<style type="text/css">
+		/*
+		Default heights:
+			Mobile Landscape: 48dp
+			Mobile Portrait: 56dp
+			Tablet/Desktop: 64dp
+		*/
+			
+		.app-bar {
+			background-color: olive;
+			color: white;
+			width: 100%;
+			font-family: 'Noto Sans', sans-serif;
+		}
+		.app-bar-icon {
+			float: right;
+		}
+		.app-bar-title {
+				display: inline-block;
+			}
+		.app-bar-menu {
+			display: inline-block;
+			float: right;
+			margin: 0px;
+		}
+		.app-bar-menu li {
+			display: inline-block; 
+		}
+		.app-bar-menu a {
+			text-decoration: none;
+			color: white;
+		}
+		@media screen and (max-width: 480px) {
+			.app-bar {
+				height: 48px;
+				min-width: 320px;
+				line-height: 48px;
+			}
+			.app-bar-icon {
+				margin: 12px 0px 12px 12px;
+			}
+		}
+		@media screen and (min-width: 480px) and (max-width: 800px) {
+			.app-bar {
+				height: 56px;
+				line-height: 56px;
+			}
+			.app-bar-icon {
+				margin: 16px 0px 16px 16px;
+			}
+			.app-bar-menu {
+				display: none;
+			}
+		}
+		@media screen and (min-width: 800px) {
+			.app-bar {
+				height: 64px;		
+				line-height: 64px;	
+			}
+			.app-bar-icon {
+				display: none;
+			}
+			.app-bar-display {
+				display: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="app-bar">
+		<i class="app-bar-icon material-icons">menu</i>
+		<div class="app-bar-title">App-bar-title</div>
+		<ul class="app-bar-menu">
+			<li><a href="#">List item</a></li>
+			<li><a href="#">List item</a></li>
+			<li><a href="#">List item</a></li>
+			<li><a href="#">List item</a></li>
+			<li><a href="#">List item</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>
+
