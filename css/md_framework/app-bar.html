@@ -15,8 +15,15 @@
 			Mobile Portrait: 56dp
 			Tablet/Desktop: 64dp
 		*/
-			
+		* {
+			margin: 0px;
+		}
+		a {
+			text-decoration: none;
+			color: black;
+		}
 		.app-bar {
+			
 			background-color: olive;
 			color: white;
 			width: 100%;
@@ -28,18 +35,6 @@
 		.app-bar-title {
 				display: inline-block;
 			}
-		.app-bar-menu {
-			display: inline-block;
-			float: right;
-			margin: 0px;
-		}
-		.app-bar-menu li {
-			display: inline-block; 
-		}
-		.app-bar-menu a {
-			text-decoration: none;
-			color: white;
-		}
 		@media screen and (max-width: 480px) {
 			.app-bar {
 				height: 48px;
@@ -48,6 +43,21 @@
 			}
 			.app-bar-icon {
 				margin: 12px 0px 12px 12px;
+			}
+			.app-bar-menu {
+				display: none;
+				position: fixed;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+			.app-bar-menu ul {
+				position: absolute;
+				background-color: white;
+				top: 0;
+				bottom: 0;
 			}
 		}
 		@media screen and (min-width: 480px) and (max-width: 800px) {
@@ -68,27 +78,37 @@
 				line-height: 64px;	
 			}
 			.app-bar-icon {
-				display: none;
-			}
-			.app-bar-display {
-				display: none;
+				display: none ;
 			}
 		}
 	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			appBarIcon = document.querySelector('.app-bar-icon');
+			appBarMenu = document.querySelector('.app-bar-menu');
+			appBarIcon.onclick = function() {
+				appBarMenu.style.display = 'block';
+			}
+			appBarMenu.onclick = function() {
+				appBarMenu.style.display = 'none';
+			}
+		}
+	</script>
 </head>
 <body>
 	<div class="app-bar">
 		<i class="app-bar-icon material-icons">menu</i>
 		<div class="app-bar-title">App-bar-title</div>
-		<ul class="app-bar-menu">
-			<li><a href="#">List item</a></li>
-			<li><a href="#">List item</a></li>
-			<li><a href="#">List item</a></li>
-			<li><a href="#">List item</a></li>
-			<li><a href="#">List item</a></li>
-		</ul>
+		<div class="app-bar-menu">
+			<ul>
+				<li><a href="#">List item</a></li>
+				<li><a href="#">List item</a></li>
+				<li><a href="#">List item</a></li>
+				<li><a href="#">List item</a></li>
+				<li><a href="#">List item</a></li>
+			</ul>
+		</div>
 	</div>
-
 </body>
 </html>
 
