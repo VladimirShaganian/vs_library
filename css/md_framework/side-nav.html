@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<style type="text/css">
+		.side-nav {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 208px; /* 320px - 56px with icon; 320px - (56px + 56px) without icon - (icon = 56px width) */
+			font-family: 'Roboto', sans-serif;
+			font-weight: 500;
+			background-color: gold;
+		}
+		.side-nav-logo {
+			height: 63px;
+			line-height: 63px;
+			padding: 0px 0px 0px 16px;
+			color: rgba(0,0,0,0.54);
+			border-bottom: 1px solid #e6e6e6;
+			
+		}
+		.side-nav nav{
+			height: 100%;
+			margin: 0px;
+			padding: 0px 0px 0px 16px;
+		}
+		.side-nav a {
+			display: block;
+			height: 48px;
+			line-height: 48px;
+			text-decoration: none;
+			color: rgba(0,0,0,0.87);
+		}
+		@media screen and (max-width: 480px) {
+			.side-nav-logo {
+				height: 48px;
+				line-height: 48px;
+			}
+		}
+		@media screen and (min-width: 480px) and (max-width: 840px) {
+			.side-nav-logo {
+				height: 56px;
+				line-height: 56px;
+			}
+		}
+	</style>
+	
+	<script type="text/javascript"></script>
+</head>
+<body>
+	<div class="side-nav">
+		<div class="side-nav-logo">Logo</div>
+		<nav>
+			<a href="#">Item 1</a>
+			<a href="#">Item 2</a>
+			<a href="#">Item 3</a>
+			<a href="#">Item 4</a>
+			<a href="#">Item 5</a>
+			<a href="#">Item 6</a>
+		</nav>
+	</div>
+
+
+</body>
+</html>
+		

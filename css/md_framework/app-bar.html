@@ -1,114 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Material Design Navigation Bar</title>
+	<title></title>
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width" initial-scale="1">
+
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 	<style type="text/css">
-		/*
-		Default heights:
-			Mobile Landscape: 48dp
-			Mobile Portrait: 56dp
-			Tablet/Desktop: 64dp
-		*/
-		* {
-			margin: 0px;
-		}
-		a {
-			text-decoration: none;
-			color: black;
-		}
-		.app-bar {
-			
-			background-color: olive;
-			color: white;
+
+		.header {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
-			font-family: 'Noto Sans', sans-serif;
+			font-family: 'Roboto', sans-serif;
+			background: gold;
+
 		}
-		.app-bar-icon {
-			float: right;
+		.header-nav a {
+			display: inline-block;
+			text-decoration: none;
+			color: rgb(0,0,0);
 		}
-		.app-bar-title {
-				display: inline-block;
-			}
+
 		@media screen and (max-width: 480px) {
-			.app-bar {
+			.header-content, .header-logo {
 				height: 48px;
-				min-width: 320px;
 				line-height: 48px;
 			}
-			.app-bar-icon {
-				margin: 12px 0px 12px 12px;
-			}
-			.app-bar-menu {
+			.header-nav {
 				display: none;
-				position: fixed;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background-color: rgba(0, 0, 0, 0.5);
 			}
-			.app-bar-menu ul {
-				position: absolute;
-				background-color: white;
-				top: 0;
-				bottom: 0;
+			.header-content {
+				padding: 0 16px 0 72px;
+			}
+			.header-logo {
+				display: inline-block;
+				float: left;
 			}
 		}
 		@media screen and (min-width: 480px) and (max-width: 800px) {
-			.app-bar {
+			.header-content, .header-logo, .header-nav, .header-nav a {
 				height: 56px;
 				line-height: 56px;
 			}
-			.app-bar-icon {
-				margin: 16px 0px 16px 16px;
+			.header-content {
+				padding: 0 16px 0 72px;
 			}
-			.app-bar-menu {
+			.header-logo {
+				display: inline-block;
+				float: left;
+			}
+			.header-nav {
 				display: none;
 			}
 		}
 		@media screen and (min-width: 800px) {
-			.app-bar {
-				height: 64px;		
-				line-height: 64px;	
+			.header-content, .header-logo, .header-nav, .header-nav a {
+				height: 64px;
+				line-height: 64px;
 			}
-			.app-bar-icon {
-				display: none ;
+			.header-content {
+				padding: 0 24px 0 80px;
 			}
-		}
+			.header-logo {
+				display: inline-block;
+				float: left;
+			}
+			.header-nav {
+				float: right;
+			}
+			.header-nav a {
+				padding: 0 24px 0 24px;
+			}
+		}		
 	</style>
+</head>
+<body>
+
+	<div class="header">
+		<div class="header-content">
+			<div class="header-logo">Logo</div>
+			<nav class="header-nav">
+				<a href="#">Item 1</a>
+				<a href="#">Item 2</a>
+				<a href="#">Item 3</a>
+				<a href="#">Item 4</a>
+				<a href="#">Item 5</a>
+			</nav>
+		</div>
+	</div>
+
 	<script type="text/javascript">
 		window.onload = function () {
-			appBarIcon = document.querySelector('.app-bar-icon');
-			appBarMenu = document.querySelector('.app-bar-menu');
-			appBarIcon.onclick = function() {
-				appBarMenu.style.display = 'block';
+			humburgerButton = document.querySelector('.humburger-button');
+			modalOverlay = document.querySelector('.modal-overlay');
+			humburgerButton.onclick = function() {
+				modalOverlay.classList.add('modal-overlay-visible');
 			}
-			appBarMenu.onclick = function() {
-				appBarMenu.style.display = 'none';
+			modalOverlay.onclick = function() {
+				modalOverlay.classList.remove('modal-overlay-visible');
 			}
 		}
 	</script>
-</head>
-<body>
-	<div class="app-bar">
-		<i class="app-bar-icon material-icons">menu</i>
-		<div class="app-bar-title">App-bar-title</div>
-		<div class="app-bar-menu">
-			<ul>
-				<li><a href="#">List item</a></li>
-				<li><a href="#">List item</a></li>
-				<li><a href="#">List item</a></li>
-				<li><a href="#">List item</a></li>
-				<li><a href="#">List item</a></li>
-			</ul>
-		</div>
-	</div>
 </body>
 </html>
 
