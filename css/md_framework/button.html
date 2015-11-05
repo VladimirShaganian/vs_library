@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<style type="text/css">
+	body {
+		background-color: skyblue;
+	}
+	/*main button*/
+	.button {		
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		border: none;
+		outline: none;
+		padding: 0 8px 0 8px;
+		margin: 8px;
+		background-color: transparent;
+		text-transform: uppercase;
+		border-radius: 2px;
+	}
+	/* flat button */
+	.flat:hover, .flat:focus  {
+		background-color: rgba(153,153,153,0.20);
+	}
+	.flat:active {
+		background-color: rgba(153,153,153,0.40);
+	}
+	.flat-disabled {
+		color: rgba(0,0,0,0.26);
+	}
+	/* flat button for dark theme*/
+	.flat-dark {
+		color: white;
+	}
+	.flat-dark:hover, .flat-dark:focus {
+		background-color: rgba(204,204,204,0.15);
+	}
+	.flat-dark:active {
+		background-color: rgba(204,204,204,0.25);
+	}
+	.flat-dark-disabled {
+		color: rgba(255,255,255,0.30);
+	}
+	/* raised button */
+	.raised {
+		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	}
+	.raised:active {
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+	}
+	.raised-disabled {
+		color: rgba(0,0,0,0.26);
+		background:  rgba(0,0,0,0.12);
+	}
+	/* raised button for dark theme */
+	.raised-dark {
+		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+		color: white;
+	}
+	.raised-dark:active {
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+	}
+	.raised-dark-disabled {
+		color: rgba(255,255,255,0.30);
+		background:  rgba(255,255,255,0.12);
+	}
+		@media screen and (max-width: 480px) {
+			.button {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				font-size: 14px;
+				height: 36px;
+			}
+		}
+		@media screen and (min-width: 480px) and (max-width: 800px) {
+			.button {
+				height: 36px;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				font-size: 14px;
+			}
+		}
+		@media screen and (min-width: 800px) {
+			.button {
+				font-family: 'Roboto', sans-serif;
+				font-weight: 500;
+				font-size: 13px;
+				height: 32px;
+			}
+		}
+	</style>
+	
+	
+</head>
+<body>
+
+	<button class="button flat">Button</button>
+	<button class="button flat-disabled" id="btn">disabled</button><br>
+	<button class="button flat-dark">Button</button>
+	<button class="button flat-dark-disabled">disabled</button><br>
+	<button class="button raised">Button</button>
+	<button class="button raised-disabled">disabled</button><br>
+	<button class="button raised-dark">Button</button>
+	<button class="button raised-dark-disabled">disabled</button>
+
+</body>
+</html>
+		

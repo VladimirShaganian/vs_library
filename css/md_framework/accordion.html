@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<style type="text/css">
+		*{
+			list-style: none;
+		}
+			/* accordion */
+		.accordion {
+			position: absolute;
+			left: 500px;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+			width: 320px;
+			padding: 0;
+		}
+		.accordion-header {
+			border-bottom: 1px solid #f6f6f6;
+			border-top: 1px solid #f6f6f6;
+			height: 48px;
+			line-height: 48px;	
+		}
+		.accordion-header-title {
+			display: inline-block;
+			margin-left: 16px;
+			vertical-align: middle;
+			line-height: normal;
+			font-weight: bold;
+		}
+		.accordion-header-icon {
+			float: right;
+			margin: 8px;
+		}
+		@media screen and (max-width: 480px) {}
+		@media screen and (min-width: 480px) and (max-width: 800px) {}
+		@media screen and (min-width: 800px) {}
+	</style>
+	
+	
+</head>
+<body>
+
+	<ul class="accordion shadow-1">
+		<li>
+			<div class="accordion-header">
+				<span class="accordion-header-title">Title</span>
+				<i class="accordion-header-icon material-icons"></i>
+			</div>
+			<div class="accordion-content">Content</div>
+		</li>
+		<li>
+			<div class="accordion-header">
+				<span class="accordion-header-title">Title</span>
+				<i class="accordion-header-icon material-icons"></i>
+			</div>
+			<div class="accordion-content">Content</div>
+		</li>
+		<li>
+			<div class="accordion-header">
+				<span class="accordion-header-title">Title</span>
+				<i class="accordion-header-icon material-icons"></i>
+			</div>
+			<div class="accordion-content">Content</div>
+		</li>
+		<li>
+			<div class="accordion-header">
+				<span class="accordion-header-title">Title</span>
+				<i class="accordion-header-icon material-icons"></i>
+			</div>
+			<div class="accordion-content">Content</div>
+		</li>
+	</ul>
+
+	<script type="text/javascript">
+		function accordion() {
+			var accordion = document.querySelector(".accordion"); //обертка для элементов аккордиона
+			var accordionTabs = document.querySelector(".accordion").children; //элементы аккордиона
+			var accordionIcon = document.querySelector(".accordion-header-icon"); // иконка для заголовка элемента
+			
+			// метод для показа содержимого активного элемента
+			var addAccordionActiveTab = function () {
+				for(var i = 0; i < accordionTabs.length; i++) {
+					if (accordionTabs[i].className == "accordion-active-tab") {
+						accordionTabs[i].querySelector(".accordion-content").style.display = "list-item";
+						accordionTabs[i].querySelector(".accordion-header-icon").innerHTML = "expand_less"; // иконка с google icon (можно менять по спецификаци)
+					} else {
+						accordionTabs[i].querySelector(".accordion-content").style.display = "none";
+						accordionTabs[i].querySelector(".accordion-header-icon").innerHTML = "expand_more"; // иконка с google icon (можно менять по спецификаци)
+					}
+				}
+			}
+
+			// проверяем на наличие активных элементов аккордиона
+			addAccordionActiveTab();
+			
+			// обработка нажатия по закоголовку элемента аккордиона
+			accordion.onclick = function(event) {
+				var accordionTab;
+				if (event.target.tagName === "SPAN" || event.target.tagName == "I") {
+					accordionTab = event.target.parentElement.parentElement;
+				} else {
+					accordionTab = event.target.parentElement;
+				}
+
+				if (accordionTab.className == "accordion-active-tab") {
+					accordionTab.className = "";
+					addAccordionActiveTab();
+				} else {
+					for (var i = 0; i < this.children.length; i++) {
+						this.children[i].className = "";
+						this.children[i].lastElementChild.style.display = "none";
+					}
+					accordionTab.className = "accordion-active-tab";
+					addAccordionActiveTab();
+				}				
+			}
+		}
+
+		accordion();
+	</script>
+</body>
+</html>

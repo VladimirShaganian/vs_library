@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale="1">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+	<style type="text/css">
+		* {
+			font-family: 'Roboto', sans-serif;
+		}
+		.table {
+			padding: 0 24px 0 24px;
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+			border-radius: 2px;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		.table th {
+			height: 56px;
+			font-size: 12px;
+			font-weight: 500;
+			text-align: left;
+			color: rgba(0,0,0,0.54);
+		}
+
+		.table td {
+			height: 48px;
+			font-size: 13px;
+			font-weight: 500;
+			color: rgba(0,0,0,0.87);
+		}
+		.table tr {
+			border-top: 1px solid #e6e6e6	;
+		}
+		.table th, .table td {
+			padding: 0 56px 0 0;
+		}
+
+		.table-cell-numeric {
+			text-align: right !important;
+		}
+		.table tbody tr:hover {
+			background-color: #EEEEEE;
+		}
+		.table th:first-child, .table td:first-child {
+			padding: 0 56px 0 24px;
+		}
+		.table th:last-child, .table td:last-child {
+			padding: 0 24px 0 0;
+		}
+
+		@media screen and (max-width: 480px) {
+			.table-responsive, .table-responsive tbody, .table-responsive tr, .table-responsive td {
+				display: block;
+			}
+			.table-responsive td:first-child, .table-responsive td:last-child, .table-responsive td {
+				padding: 0 ;
+			}
+			.table-cell-numeric {
+				text-align: left !important;
+			}
+			.table-responsive thead {
+				display: none;
+			}
+			.table-responsive td {
+				height: 48px;
+				line-height: 48px;
+				overflow: hidden;
+				width: 100%;
+				white-space: nowrap;
+				
+			}
+			.table-responsive td::before {
+				content: attr(data-th);
+				display: inline-block;
+				width: 30%;
+				
+				
+				
+				
+			}
+			.table-responsive td,
+			.table-responsive th {
+				
+			}
+			
+			.table-responsive td, 
+			.table-responsive td:before  {
+				
+
+			}
+		}
+	</style>
+	
+	
+</head>
+<body>
+	<table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+                <th>Header 5</th>
+                <th class="table-cell-numeric">Header 6</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">145%</td>
+            </tr>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">125%</td>
+            </tr>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">12345%</td>
+            </tr>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">12345%</td>
+            </tr>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">12345%</td>
+            </tr>
+            <tr>
+                <td>Table Data 1</td>
+                <td>Table Data 2</td>
+                <td>Table Data 3</td>
+                <td>Table Data 4</td>
+                <td>Table Data 5</td>
+                <td class="table-cell-numeric">12345%</td>
+            </tr>                         
+        </tbody>
+    </table>
+
+	<script type="text/javascript">
+		function responsiveTable() {
+						// Адаптивная таблица .table-responsive. 
+			// коопирование значений заголовков таблицы в элементы td::before
+			var headertext = [],
+			headers = document.querySelectorAll(".table-responsive th"),
+			tablerows = document.querySelectorAll(".table-responsive th"),
+			tablebody = document.querySelector(".table-responsive tbody");
+
+			for(var i = 0; i < headers.length; i++) {
+			  var current = headers[i];
+			  headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+			} 
+			for (var i = 0, row; row = tablebody.rows[i]; i++) {
+			  for (var j = 0, col; col = row.cells[j]; j++) {
+			    col.setAttribute("data-th", headertext[j]);
+			  } 
+			}
+		}
+		responsiveTable();
+	</script>
+</body>
+</html>
+		
