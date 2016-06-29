@@ -18,3 +18,23 @@
     }
 
     $pdo->query("INSERT INTO table (" . $cols . ") VALUES (" . $vals . ")");
+
+function prepare_insert($data, $table) {
+	// INSERT PATTERN
+	$i = 1;
+	$cols = '';
+	$vals = '';
+	foreach ($data as $key =>$value) {
+		if (count($data) > $i) {
+			$cols .= "`$key`".",";
+			$value = mysql_real_escape_string($value);
+			$vals .= "'{$value}'".",";
+			$i++;
+		} else {
+			$cols .= "`$key`";
+			$value = mysql_real_escape_string($value);
+			$vals .= "'{$value}'";
+		}
+	}
+	return  "INSERT INTO " . $table . " (" . $cols . ") VALUES (" . $vals . ")";
+}
