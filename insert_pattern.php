@@ -25,14 +25,13 @@ function prepare_insert($data, $table) {
 	$cols = '';
 	$vals = '';
 	foreach ($data as $key =>$value) {
+		$value = mysql_real_escape_string($value);
 		if (count($data) > $i) {
 			$cols .= "`$key`".",";
-			$value = mysql_real_escape_string($value);
 			$vals .= "'{$value}'".",";
 			$i++;
 		} else {
 			$cols .= "`$key`";
-			$value = mysql_real_escape_string($value);
 			$vals .= "'{$value}'";
 		}
 	}
