@@ -1,3 +1,4 @@
+<?php
 function prepare_update($data, $table, $where)
 {
 	$set_values = '';
