@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Function for prepare mysql update statement
+ * @param $data
+ * @param $table
+ * @return string
+ */
 function prepare_update($data, $table, $where)
 {
 	$set_values = '';
